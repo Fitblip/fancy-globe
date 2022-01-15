@@ -1,0 +1,244 @@
+@light-blue: #3498db;
+@light-green: #2ecc71;
+@light-red: #e74c3c;
+@light-yellow: #f1c40f;
+
+@font-face {
+  font-family: Melbourne;
+  src: url("../extra/Melbourne%20regular%20basic.otf") format("opentype");
+}
+
+* {
+  font-family: 'Melbourne', serif;
+}
+
+html, body {
+  height: 100%;
+  background: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#stats {
+  z-index: 999999999999;
+}
+
+#logoContainer {
+  width: 230px;
+  position: absolute;
+  display: none;
+  z-index: 99999999999999;
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+}
+
+.words {
+  float: right;
+  font-weight: 300;
+  color: white;
+  width: 150px;
+  margin-top: 28px;
+  h2{
+    font-size: 45px;
+    margin-bottom: 9px;
+    line-height: 22px;
+  }
+  h4{
+    margin-left: 1px;
+    font-size: 14px;
+  }
+  h2, h4{
+    font-weight: 300;
+  }
+}
+
+.unhide{
+  opacity: 1 !important;
+}
+
+.menu{
+  width: 300px;
+  float: right;
+  height: 100%;
+  padding: 0;
+  opacity: 0;
+  .top-buttons{
+    height: 75px;
+    .menu-button{
+      &:last-child{
+        border-right: 0;
+      }
+      width: 75px;
+      height: 75px;
+      float: left;
+      border-right: 3px solid white;
+      border-bottom: 3px solid white;
+      cursor: pointer;
+      h5{
+        font-size: 15px;
+      }
+      i{
+        font-size: 24px;
+        padding: 10px;
+      }
+
+    }
+    .all-button{
+      background: @light-blue
+    }
+    .approvals-button{
+      background: @light-green
+    }
+    .alerts-button{
+      background: @light-red
+    }
+    .files-button{
+      background: @light-yellow
+    }
+  }
+  .activeTab{
+    border-bottom: none !important;
+  }
+  .menu-close{
+    position: absolute;
+    top: 80px;
+    right: 13px;
+    cursor: pointer;
+    z-index: 99999999;
+  }
+  .settings-menu{
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      background: #2c3e50;
+      z-index: 9999999;
+      h1{
+        margin:30px;
+      }
+      .action-buttons{
+        width: 100%;
+        padding: 0 30px;
+        button{
+          background-color: #3498DB;
+          border-color: #3498DB;
+          float: left;
+          width: 100%;
+          margin-bottom: 6px;
+        }
+      }
+  }
+  .messages-wrapper{
+    height:100%;
+  }
+  .messages{
+    overflow-y: auto;
+    margin-top:30px;
+    .message{
+      height: 80px;
+      width: 260px;
+      margin: 0 20px;
+      border-bottom: 5px solid #2980b9;
+      .content{
+        float: left;
+        text-align: left;
+        width: 180px;
+        max-height: 74px;
+        .file-name{
+          font-size: 18px;
+          font-weight: 700;
+        }
+        p{
+          margin: 0;
+          line-height: initial;
+          padding-top: 4px;
+        }
+      }
+      img{
+        float: right;
+        height: 60px;
+        width: 60px;
+        margin-top: 8px;
+      }
+      .event-type{
+        width: 20px;
+      }
+      .event-badge{
+        position: relative;
+        background: rgba(52, 152, 219, 0.69);
+        padding: 3px;
+        border-top-left-radius: 3px;
+        width: 20px;
+        margin-left: 240px;
+        top: -19px;
+      }
+    }
+
+  }
+}
+
+.comeback{
+  position: absolute;
+}
+
+.settings-menu.ng-enter {
+  animation: slideInRight .5s;
+}
+
+.settings-menu.ng-leave {
+  animation: slideOutRight .5s;
+}
+
+.message.ng-enter {
+  animation: fadeInDown .5s;
+}
+
+.message.ng-leave {
+  animation: fadeOutDown .5s;
+}
+
+.main-wrapper{
+  height: 100%;
+}
+
+#container {
+  float: left;
+  height: 100%;
+  //width: 100%;
+  opacity: 0;
+  canvas{
+    height: 100% !important;
+    position: static !important;
+  }
+}
+
+button:focus, button:active {
+  outline: 0 !important;
+}
+
+
+.top-bar{
+  position: absolute;
+  color:white;
+  z-index:9999;
+  width: 100%;
+  .row{
+    text-align: center;
+  }
+}
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

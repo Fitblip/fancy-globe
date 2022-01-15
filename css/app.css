@@ -1,0 +1,223 @@
+@font-face {
+  font-family: Melbourne;
+  src: url("../extra/Melbourne%20regular%20basic.otf") format("opentype");
+}
+* {
+  font-family: 'Melbourne', serif;
+}
+html,
+body {
+  height: 100%;
+  background: black;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+#stats {
+  z-index: 999999999999;
+}
+#logoContainer {
+  width: 230px;
+  position: absolute;
+  display: none;
+  z-index: 99999999999999;
+}
+#logo {
+  height: 80px;
+  width: 80px;
+}
+.words {
+  float: right;
+  font-weight: 300;
+  color: white;
+  width: 150px;
+  margin-top: 28px;
+}
+.words h2 {
+  font-size: 45px;
+  margin-bottom: 9px;
+  line-height: 22px;
+}
+.words h4 {
+  margin-left: 1px;
+  font-size: 14px;
+}
+.words h2,
+.words h4 {
+  font-weight: 300;
+}
+.unhide {
+  opacity: 1 !important;
+}
+.menu {
+  width: 300px;
+  float: right;
+  height: 100%;
+  padding: 0;
+  opacity: 0;
+}
+.menu .top-buttons {
+  height: 75px;
+}
+.menu .top-buttons .menu-button {
+  width: 75px;
+  height: 75px;
+  float: left;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  cursor: pointer;
+}
+.menu .top-buttons .menu-button:last-child {
+  border-right: 0;
+}
+.menu .top-buttons .menu-button h5 {
+  font-size: 15px;
+}
+.menu .top-buttons .menu-button i {
+  font-size: 24px;
+  padding: 10px;
+}
+.menu .top-buttons .all-button {
+  background: #3498db;
+}
+.menu .top-buttons .approvals-button {
+  background: #2ecc71;
+}
+.menu .top-buttons .alerts-button {
+  background: #e74c3c;
+}
+.menu .top-buttons .files-button {
+  background: #f1c40f;
+}
+.menu .activeTab {
+  border-bottom: none !important;
+}
+.menu .menu-close {
+  position: absolute;
+  top: 80px;
+  right: 13px;
+  cursor: pointer;
+  z-index: 99999999;
+}
+.menu .settings-menu {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background: #2c3e50;
+  z-index: 9999999;
+}
+.menu .settings-menu h1 {
+  margin: 30px;
+}
+.menu .settings-menu .action-buttons {
+  width: 100%;
+  padding: 0 30px;
+}
+.menu .settings-menu .action-buttons button {
+  background-color: #3498DB;
+  border-color: #3498DB;
+  float: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+.menu .messages-wrapper {
+  height: 100%;
+}
+.menu .messages {
+  overflow-y: auto;
+  margin-top: 30px;
+}
+.menu .messages .message {
+  height: 80px;
+  width: 260px;
+  margin: 0 20px;
+  border-bottom: 5px solid #2980b9;
+}
+.menu .messages .message .content {
+  float: left;
+  text-align: left;
+  width: 180px;
+  max-height: 74px;
+}
+.menu .messages .message .content .file-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.menu .messages .message .content p {
+  margin: 0;
+  line-height: initial;
+  padding-top: 4px;
+}
+.menu .messages .message img {
+  float: right;
+  height: 60px;
+  width: 60px;
+  margin-top: 8px;
+}
+.menu .messages .message .event-type {
+  width: 20px;
+}
+.menu .messages .message .event-badge {
+  position: relative;
+  background: rgba(52, 152, 219, 0.69);
+  padding: 3px;
+  border-top-left-radius: 3px;
+  width: 20px;
+  margin-left: 240px;
+  top: -19px;
+}
+.comeback {
+  position: absolute;
+}
+.settings-menu.ng-enter {
+  animation: slideInRight .5s;
+}
+.settings-menu.ng-leave {
+  animation: slideOutRight .5s;
+}
+.message.ng-enter {
+  animation: fadeInDown .5s;
+}
+.message.ng-leave {
+  animation: fadeOutDown .5s;
+}
+.main-wrapper {
+  height: 100%;
+}
+#container {
+  float: left;
+  height: 100%;
+  opacity: 0;
+}
+#container canvas {
+  height: 100% !important;
+  position: static !important;
+}
+button:focus,
+button:active {
+  outline: 0 !important;
+}
+.top-bar {
+  position: absolute;
+  color: white;
+  z-index: 9999;
+  width: 100%;
+}
+.top-bar .row {
+  text-align: center;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}

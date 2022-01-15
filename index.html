@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>TA Globe</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+</head>
+<body ng-controller="globeCtrl">
+    <div class="container-fluid top-bar ng-cloak main-wrapper">
+        <div class="row" style="height: 100%;">
+            <div id="container"></div>
+            <div id="right-menu" class="menu col-md-4" ng-style="{backgroundColor: currentTab.color}" ng-class="{unhide: loaded}" ng-if="menuVisible">
+                <div class="top-buttons">
+                    <div
+                        ng-click="setTab('all')"
+                        class="menu-button all-button"
+                        ng-model="allTab"
+                        ng-class="{activeTab: allTab.active}"
+                    >
+                        <i class="fa fa-asterisk"></i>
+                        <h5>
+                            All
+                        </h5>
+                    </div>
+
+                    <div
+                        ng-click="setTab('approvals')"
+                        class="menu-button approvals-button"
+                        ng-model="approvalsTab"
+                        ng-class="{activeTab: approvalsTab.active}"
+                    >
+                        <i class="fa fa-check-square-o"></i>
+                        <h5>Approvals</h5>
+                    </div>
+                    <div
+                        ng-click="setTab('alerts')"
+                        class="menu-button alerts-button"
+                        ng-model="alertsTab"
+                        ng-class="{activeTab: alertsTab.active}"
+                    >
+                        <i class="fa fa-exclamation"></i>
+                        <h5>Alerts</h5>
+                    </div>
+                    <div
+                        ng-click="setTab('files')"
+                        class="menu-button files-button"
+                        ng-model="filesTab"
+                        ng-class="{activeTab: filesTab.active}"
+                    >
+                        <i class="fa fa-file-text-o"></i>
+                        <h5>Files</h5>
+                    </div>
+                </div>
+                <div ng-click="toggleSettings()" class="menu-close">
+                    <i ng-if="!shouldShowMenu" class="fa fa-cog"></i>
+                    <i ng-if="shouldShowMenu" class="fa fa-times"></i>
+                </div>
+                <div class="settings-menu" ng-if="shouldShowMenu">
+                    <h1>Settings</h1>
+                    <div class="action-buttons clearfix">
+                        <button ng-click="toggleRotation()" class="btn btn-primary btn-sm" href="#">Restart rotation</button>
+                        <button ng-click="toggleSun()" class="btn btn-primary btn-sm" href="#">Toggle Sunlight</button>
+                        <button ng-click="toggleFullscreen()" class="btn btn-primary btn-sm">Toggle Fullscreen</button>
+                        <button ng-click="zoomToMurica()" class="btn btn-primary btn-sm">'Murica!</button>
+                        <button ng-click="toggleSunDebug()" class="btn btn-primary btn-sm">Toggle sun & paths</button>
+                    </div>
+                </div>
+                <div id="messages" class="messages">
+                    <div ng-hide="filteredEvents.length "><h2>Waiting for events...</h2></div>
+                    <div
+                        class="message message-misc"
+                        ng-style="{borderBottom: '5px solid ' + currentTab.underlineColor}"
+                        ng-repeat="event in filteredEvents  = (events | tabFilter: currentTab.type)"
+                    >
+                        <div class="content">
+                            <p class="file-name">{{event.fileName}}</p>
+                            <p>{{event.eventMessage}}</p>
+                        </div>
+                        <div>
+                            <img class="avatar" ng-src="{{event.avatar}}">
+                            <i ng-if="currentTab.type == 'all' && event.type == 'approval'" class="event-badge fa fa-check-square-o"></i>
+                            <i ng-if="currentTab.type == 'all' && event.type == 'misc'" class="event-badge fa fa-asterisk"></i>
+                            <i ng-if="currentTab.type == 'all' && event.type == 'alert'" class="event-badge fa fa-exclamation"></i>
+                            <i ng-if="currentTab.type == 'all' && event.type == 'file'" class="event-badge fa fa-file-text-o"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="logoContainer">
+        <div id="logo"></div>
+    </div>
+
+    <script type="text/javascript" src="js/third-party/Detector.js"></script>
+    <script type="text/javascript" src="js/third-party/stats.min.js"></script>
+    <script type="text/javascript" src="js/third-party/three.js"></script>
+    <script type="text/javascript" src="js/third-party/screenfull.min.js"></script>
+    <script type="text/javascript" src="js/third-party/angular.min.js"></script>
+    <script type="text/javascript" src="js/third-party/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+    <script type="text/javascript" data-main="js/globe/globe.js" src="js/third-party/require.js"></script>
+
+</body>
+
+</html>
